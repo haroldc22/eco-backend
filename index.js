@@ -61,6 +61,19 @@ app.post("/api/usuarios", async(req, res)=>{
     console.log("Useuario creado");
 })
 
+app.put("/api/usuarios/:id", async(req, res)=>{
+    const {userName, email, logo, posts, follows, followers} = req.body;
+    const {id} = req.params;
+    await supabase.from("usuarios").update({
+        userName,
+        email,
+        logo,
+        posts,
+        follows,
+        followers
+    }).eq(id);
+})
+
 app.listen(4000, ()=>{
     console.log("server on port 4000");
 })
