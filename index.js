@@ -49,11 +49,14 @@ app.get("/api/usuarios", async(req, res) =>{
 })
 
 app.post("/api/usuarios", async(req, res)=>{
-    const {userName, email, logo} = req.body;
+    const {userName, email, logo, posts, follows, followers} = req.body;
     await supabase.from("usuarios").insert({
         userName,
         email,
-        logo
+        logo,
+        posts,
+        follows,
+        followers
     });
     console.log("Useuario creado");
 })
