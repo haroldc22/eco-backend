@@ -71,7 +71,7 @@ app.put("/api/usuarios/:id", async(req, res)=>{
         posts,
         follows,
         followers
-    }).eq(id);
+    }).match({id: id});
 })
 
 app.listen(4000, ()=>{
