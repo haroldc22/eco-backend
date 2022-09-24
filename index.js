@@ -55,7 +55,8 @@ app.post("/api/usuarios", async(req, res)=>{
         logo,
         posts,
         follows,
-        followers
+        followers,
+        password
     });
     console.log("Useuario creado");
 })
@@ -68,7 +69,8 @@ app.put("/api/usuarios/:id", async(req, res)=>{
         logo,
         posts,
         follows,
-        followers
+        followers,
+        password
     }).match({id: id});
 })
 
