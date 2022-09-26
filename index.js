@@ -9,7 +9,7 @@ const {createClient} = require('@supabase/supabase-js');
 const supabase = createClient('https://yzjdumjamibbbiykruyj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl6amR1bWphbWliYmJpeWtydXlqIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NjE3Nzk1OTksImV4cCI6MTk3NzM1NTU5OX0.Tp_8Yu-HYwxnaGueuyBFCUaLcR210sLZUPFKJN-RwRc');
 
 const app = express();
-app.use(cors())
+app.use(cors({origin: "http://localhost:4000/"}))
 app.use(bodyParser.json());
 
 app.get("/api/parques", async function(req, res){
